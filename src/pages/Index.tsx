@@ -7,8 +7,8 @@ const Index = () => {
 
   const handlePlayAudio = () => {
     if (!audioRef.current) {
-      // Создаем аудио элемент - используем мощный военный марш
-      audioRef.current = new Audio('https://archive.org/download/DerFuehrerTonaufnahmenSammelband/06%20-%20Das%20Deutschlandlied.mp3');
+      // Создаем аудио элемент - версия начинающаяся со слов
+      audioRef.current = new Audio('https://archive.org/download/deutschlandlied-vocal/Deutschlandlied_vocal.mp3');
       audioRef.current.volume = 0.9;
       audioRef.current.loop = false;
       
