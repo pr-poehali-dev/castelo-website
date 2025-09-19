@@ -39,32 +39,30 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen bg-background flex flex-col relative overflow-hidden">
       {/* Фоновые элементы */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/20"></div>
       
-      {/* Главный контент */}
-      <div className="relative z-10 text-center space-y-12">
-        {/* Заголовок */}
+      {/* Заголовок вверху */}
+      <div className="relative z-10 text-center pt-16 pb-8">
         <div className="space-y-4">
           <h1 className="font-serif text-7xl md:text-8xl font-bold text-foreground tracking-wider">
             CASTELO
           </h1>
           <div className="w-24 h-0.5 bg-primary mx-auto"></div>
-        </div>
-
-        {/* Инструкция */}
-        <div className="space-y-8">
-          <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-wide">
+          <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-wide mt-6">
             нажми
           </p>
+        </div>
+      </div>
 
-          {/* Кнопка воспроизведения */}
-          <button
-            onClick={handlePlayAudio}
-            className="audio-button group relative"
-            aria-label="Воспроизвести аудио"
-          >
+      {/* Кнопка по центру экрана */}
+      <div className="flex-1 flex items-center justify-center relative z-10">
+        <button
+          onClick={handlePlayAudio}
+          className="audio-button group relative"
+          aria-label="Воспроизвести аудио"
+        >
             {isPlaying ? (
               <Icon 
                 name="Pause" 
@@ -79,12 +77,13 @@ const Index = () => {
               />
             )}
             
-            {/* Эффект свечения */}
-            <div className="absolute inset-0 rounded-full bg-primary opacity-20 animate-ping"></div>
-          </button>
-        </div>
+          {/* Эффект свечения */}
+          <div className="absolute inset-0 rounded-full bg-primary opacity-20 animate-ping"></div>
+        </button>
+      </div>
 
-        {/* Статус */}
+      {/* Статус внизу */}
+      <div className="relative z-10 text-center pb-16">
         {isPlaying && (
           <div className="animate-fade-in">
             <p className="text-primary font-medium text-lg">
